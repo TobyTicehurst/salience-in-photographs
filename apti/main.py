@@ -40,16 +40,16 @@ if __name__ == "__main__":
     # check if optional savepath has been given
     # if not specified, the root directory is used
     if args.f is not None:
-        parent_save_path = Path.home() / Path(args.f)
-        print(parent_save_path)
+        ##### FOR LINUX ::: parent_save_path = Path.home() / Path(args.f)
+        parent_save_path = Path(args.f)
     else:
         parent_save_path = Path.cwd()
     
     ## image path ##
-    raw_img_path = Path.home() / Path(args.img_path)
+    raw_img_path = Path(args.img_path)
     # check that image exists
     if not raw_img_path.is_file():
-        raise ValueError("Invalid image file path. File does not exist.")
+        raise ValueError("Invalid image file path.\n" + str(raw_img_path) + "\nFile does not exist.")
     
     # ==== load & process image ==== #
     raw_img = cv2.imread(str(raw_img_path.resolve()))
