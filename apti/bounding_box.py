@@ -219,7 +219,7 @@ class Box(object):
         temp_box = Box(self.s_map, self._metadata.starting_box_tl, self._metadata.starting_dims, self._min_size)
         print("Saving video to : ", save_path)
         # initialise writer
-        cv2.VideoWriter_fourcc(*'X264')
+        #cv2.VideoWriter_fourcc(*'X264')
         writer = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*'X264'), 1., (image.shape[1], image.shape[0]))
         
         # add starting position image
